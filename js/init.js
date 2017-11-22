@@ -152,7 +152,7 @@
       $.ajax({
 
 	      type: "POST",
-	      url: "https://personal-website-186815.appspot.com/",
+	      url: "https://script.google.com/macros/s/AKfycbxotU6AK1d10haowH09azVDCkP8LD-_QyV4ynSOZgqTmp7w-GE/exec",
 	      data: data,
 	      success: function(msg) {
 
