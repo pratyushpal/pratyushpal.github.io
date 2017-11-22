@@ -137,44 +137,44 @@
 /*	contact form
 ------------------------------------------------------*/
 
-   $('form#contactForm button.submit').click(function() {
-
-      $('#image-loader').fadeIn();
-
-      var contactName = $('#contactForm #contactName').val();
-      var contactEmail = $('#contactForm #contactEmail').val();
-      var contactSubject = $('#contactForm #contactSubject').val();
-      var contactMessage = $('#contactForm #contactMessage').val();
-
-      var data = 'contactName=' + contactName + '&contactEmail=' + contactEmail +
-               '&contactSubject=' + contactSubject + '&contactMessage=' + contactMessage;
-
-      $.ajax({
-
-	      type: "POST",
-	      url: "https://script.google.com/macros/s/AKfycbxotU6AK1d10haowH09azVDCkP8LD-_QyV4ynSOZgqTmp7w-GE/exec",
-	      data: data,
-	      success: function(msg) {
-
-            // Message was sent
-            if (msg == 'OK') {
-               $('#image-loader').fadeOut();
-               $('#message-warning').hide();
-               $('#contactForm').fadeOut();
-               $('#message-success').fadeIn();
-            }
-            // There was an error
-            else {
-               $('#image-loader').fadeOut();
-               $('#message-warning').html(msg);
-	            $('#message-warning').fadeIn();
-            }
-
-	      }
-
-      });
-      return false;
-   });
+  //  $('form#contactForm button.submit').click(function() {
+   //
+  //     $('#image-loader').fadeIn();
+   //
+  //     var contactName = $('#contactForm #contactName').val();
+  //     var contactEmail = $('#contactForm #contactEmail').val();
+  //     var contactSubject = $('#contactForm #contactSubject').val();
+  //     var contactMessage = $('#contactForm #contactMessage').val();
+   //
+  //     var data = 'contactName=' + contactName + '&contactEmail=' + contactEmail +
+  //              '&contactSubject=' + contactSubject + '&contactMessage=' + contactMessage;
+   //
+  //     $.ajax({
+   //
+	//       type: "POST",
+	//       url: "https://script.google.com/macros/s/AKfycbxotU6AK1d10haowH09azVDCkP8LD-_QyV4ynSOZgqTmp7w-GE/exec",
+	//       data: data,
+	//       success: function(msg) {
+   //
+  //           // Message was sent
+  //           if (msg == 'OK') {
+  //              $('#image-loader').fadeOut();
+  //              $('#message-warning').hide();
+  //              $('#contactForm').fadeOut();
+  //              $('#message-success').fadeIn();
+  //           }
+  //           // There was an error
+  //           else {
+  //              $('#image-loader').fadeOut();
+  //              $('#message-warning').html(msg);
+	//             $('#message-warning').fadeIn();
+  //           }
+   //
+	//       }
+   //
+  //     });
+  //     return false;
+  //  });
 
 
 });
