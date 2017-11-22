@@ -1,5 +1,5 @@
 ﻿<?php
-<script> console.log('hey');</script>
+
 $siteOwnersEmail = 'pratyush98pal@gmail.com';
 
 
