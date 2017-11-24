@@ -1,6 +1,6 @@
 ﻿<?php
-
-$siteOwnersEmail = 'pratyush98pal@gmail.com';
+// file not being used anymore because github pages does not host php
+$siteOwnersEmail = '';
 
 
 if($_POST) {

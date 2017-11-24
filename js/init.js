@@ -137,6 +137,32 @@
 /*	contact form
 ------------------------------------------------------*/
 
+ $('form#contactForm button.submit').click(function() {
+        $('#image-loader').fadeIn();
+       var contactName = $('#contactForm #contactName').val();
+       var contactEmail = $('#contactForm #contactEmail').val();
+       var contactSubject = $('#contactForm #contactSubject').val();
+       var contactMessage = $('#contactForm #contactMessage').val();
+       var myform = $("form#contactForm");
+
+       var emailJSON = {"reply_to": contactEmail,"subject": contactSubject,"to_name":"Pratyush Pal", "from_name": contactName,"message_html": contactMessage};
+
+       myform.find("button").text("Submitting...");
+      emailjs.send("gmail", "iambatman", emailJSON).then(function(){
+         $('#message-success').fadeIn();
+       $('#image-loader').fadeOut();
+       myform.find("button").text("Submit");
+    }, function(err) {
+         msg = "Send email failed!\r\n Response:\n " + JSON.stringify(err);
+        $('#message-warning').html(msg);
+        $('#message-warning').fadeIn();
+        $('#image-loader').fadeOut();
+        myform.find("button").text("Submit");
+    });
+  return false;
+   });
+
+   // code for running php script, not being used right now because github pages doesnt host php RIP
   //  $('form#contactForm button.submit').click(function() {
    //
   //     $('#image-loader').fadeIn();
